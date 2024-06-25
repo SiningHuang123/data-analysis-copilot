@@ -249,7 +249,7 @@ def format_intermediate_steps(response):
         tool_input = step[0].tool_input
         log = step[0].log.strip()
         formatted_output += f"Invoked `{tool}` with: \n```python\n\n{tool_input}\n```\n\n"
-    formatted_output += f"Final Output: \n `{response["output"]}`"
+    formatted_output += f'Final Output: \n `{response["output"]}`'
     return formatted_output
 
 # Function to generate code that is used to display the information within the report
