@@ -293,6 +293,12 @@ if "code" not in st.session_state:
     st.session_state.code = """
 st.write("There is no report created yet, please ask the chatbot to create a report if you need")
 """
+# Milestone #1: Extract schema of the table and store in a streamlit state variable
+df = get_dataframe()
+if "table_schema" not in st.session_state:
+    schema = {col: str(df[col].dtype) for col in df.columns}
+    st.session_state.table_schema = schema
+
 if "thoughtflow" not in st.session_state:
     st.session_state.agent_thoughtflow = ""
 
