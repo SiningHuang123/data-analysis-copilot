@@ -217,7 +217,10 @@ Anything of the part of the code that is todo with searching on the internet ple
     input_data = (
         "execute this plan "
         + plan
-        + " with this dataseset "
+        + " with table name 'df' "
+        + " with this table schema "
+        + str(st.session_state.table_schema)
+        + " with this dataset "
         + st.session_state.df.to_csv()
     )
 
